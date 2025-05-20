@@ -8,12 +8,6 @@ function getComputerChoice () {
 
 function playRound (computerChoice, humanChoice) {
     humanChoice = humanChoice.toUpperCase();
-    // Rock vs Paper = Wins Paper *
-    // Rock vs Rock = Nobody wins *
-    // Rock vs Scissors = Wins Rock *
-    // Paper vs Paper = Nobody wins *
-    // Paper vs Scissors = Wins Scissors *
-    // Scissors vs Scissors = Nobody wins *
     if(humanChoice == 'ROCK' && computerChoice == 1 || humanChoice == 'PAPER' && computerChoice == 2 || humanChoice == 'SCISSORS' && computerChoice == 3) {
         console.log('Nobody wins!');
         return;
