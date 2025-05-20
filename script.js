@@ -7,3 +7,6 @@ function getComputerChoice () {
 }
 
 let getHumanChoice = prompt('Choose your weapon: ');
+
+let computerScore = 0;
+let humanScore = 0;
