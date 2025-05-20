@@ -6,11 +6,6 @@ function getComputerChoice () {
     return Math.floor(Math.random() * 3) + 1;
 }
 
-let getHumanChoice = prompt('Choose your weapon: ');
-
-let computerScore = 0;
-let humanScore = 0;
-
 function playRound (computerChoice, humanChoice) {
     humanChoice = humanChoice.toUpperCase();
     // Rock vs Paper = Wins Paper *
@@ -24,26 +19,40 @@ function playRound (computerChoice, humanChoice) {
         return;
     } else if (humanChoice == 'ROCK' && computerChoice == 2) {
         console.log('Computer wins!');
-        return computerChoice++;
+        return computerScore++;
     } else if (humanChoice == 'PAPER' && computerChoice == 1) {
         console.log('Human wins!');
-        return humanChoice;
+        return humanScore++;
     } else if (humanChoice == 'ROCK' && computerChoice == 3) {
         console.log('Human wins!');
-        return humanChoice++;
+        return humanScore++;
     } else if (humanChoice == 'SCISSORS' && computerChoice == 1) {
         console.log('Computer wins!');
-        return computerChoice;
+        return computerScore++;
     } else if (humanChoice == 'PAPER' && computerChoice == 3) {
         console.log('Computer wins!');
-        return computerChoice++;
+        return computerScore++;
     } else if (humanChoice == 'SCISSORS' && computerChoice == 2) {
         console.log('Human wins!');
-        return humanChoice;
+        return humanScore++;
     } 
 }
 
-let computerSelection = getComputerChoice();
-let humanSelection = getHumanChoice;
+function playGame(num) {
+    for (i = 0; i<num; i++){
+        let getHumanChoice = prompt('Choose your weapon: ');
+        let humanSelection = getHumanChoice;
+        let computerSelection = getComputerChoice();
+        playRound(computerSelection, humanSelection);
+    }
+    if (humanScore > computerScore){
+        console.log('Humans dominate!');
+    } else {
+        console.log('Computers are coming for us!');
+    }
+}
 
-playRound(computerSelection, humanSelection);
+let computerScore = 0;
+let humanScore = 0;
+
+playGame(5);
