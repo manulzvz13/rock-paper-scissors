@@ -53,4 +53,20 @@ function playGame(num) {
 let computerScore = 0;
 let humanScore = 0;
 
-playGame(5);
+// playGame(5);
+
+const menu = document.querySelector("#menu");
+menu.addEventListener('click', (event) => {
+  let target = event.target;
+  switch(target.id) {
+    case 'rock':
+      console.log('human selects rock');
+      break;
+    case 'paper':
+      console.log('human selects paper');
+      break;
+    case 'scissors':
+      console.log('human selects scissors');
+      break;
+  }
+});
