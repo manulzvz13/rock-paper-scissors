@@ -6,6 +6,9 @@ const computerSpace = document.querySelector("#computerSpan");
 const humanResult = document.createElement("p");
 const computerResult = document.createElement("p");
 
+let computerScore = 0;
+let humanScore = 0;
+
 menu.addEventListener("click", (event) => {
   let target = event.target;
   playRound(getComputerChoice(), target.id);
@@ -13,6 +16,15 @@ menu.addEventListener("click", (event) => {
   computerResult.textContent = `${computerScore}`;
   humanSpace.appendChild(humanResult);
   computerSpace.appendChild(computerResult);
+  if(humanScore == 5) {
+    alert('Humans dominate!');
+    computerScore = 0;
+    humanScore = 0;
+  } else if (computerScore == 5) {
+    alert('Computers are coming for us!');
+    computerScore = 0;
+    humanScore = 0;
+  }
 });
 
 function getComputerChoice() {
@@ -63,20 +75,4 @@ function playRound(computerChoice, humanChoice) {
   }
 }
 
-// function playGame(num) {
-//   // for (i = 0; i < num; i++) {
-//   //   let getHumanChoice = prompt("Choose your weapon: ");
-//   //   let humanSelection = getHumanChoice;
-//   //   let computerSelection = getComputerChoice();
-//   //   playRound(computerSelection, humanSelection);
-//   // }
-//   if (humanScore > computerScore) {
-//     console.log("Humans dominate!");
-//   } else {
-//     console.log("Computers are coming for us!");
-//   }
-// }
 
-let computerScore = 0;
-let humanScore = 0;
-// playGame(5);
