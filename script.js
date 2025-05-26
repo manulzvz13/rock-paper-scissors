@@ -6,6 +6,8 @@ const computerSpace = document.querySelector("#computerSpan");
 const humanResult = document.createElement("p");
 const computerResult = document.createElement("p");
 
+// Initialize scores
+
 let computerScore = 0;
 let humanScore = 0;
 
